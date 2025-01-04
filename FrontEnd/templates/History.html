@@ -1,0 +1,19 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Translation History</h1>
+    {% if history %}
+        <ul>
+            {% for entry in history %}
+            <li>
+                <strong>Original:</strong> {{ entry.input_text }}<br>
+                <strong>Translated:</strong> {{ entry.output_text }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No history available.</p>
+    {% endif %}
+</div>
+{% endblock %}

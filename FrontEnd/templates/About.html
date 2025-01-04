@@ -1,0 +1,110 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>About Us</h1>
+
+    <div class="introduction">
+        <h2>Introduction</h2>
+        <p>
+            In school, many students read classic literature by authors like Shakespeare and Charles Dickens. However, understanding 
+            the traditional, formal English can be challenging, making it hard for modern readers to fully appreciate these texts. 
+        </p>
+        <p>
+            Our project aims to create a system that converts Shakespearean English into modern English sentences. This will help 
+            people understand these classic texts more easily while preserving their original meaning and tone. Using Natural Language 
+            Processing (NLP) techniques focused on style transfer, we plan to employ both pre-trained models and train our own models 
+            to build a small hybrid system for converting these texts.
+        </p>
+        <p>
+            Inspired by our own experiences as students struggling to understand complex texts, this project demonstrates how AI and NLP 
+            can help make difficult, old language easier to comprehend. In essence, this tool will allow users to input sentences in 
+            Shakespearean English and receive modern English translations, leveraging the power of NLP for meaningful language transformation.
+        </p>
+    </div>
+
+    <div class="contributions">
+        <h2>Team Contributions</h2>
+        <ul>
+            <li>
+                <strong>Anmol:</strong> 
+                Anmol took a leading role in researching project idea, especially in data collection, preprocessing, and UI development. 
+                She played the main part in ensuring the dataset was clean, complete, and diverse by managing duplicates, 
+                handling missing data, and creating synthetic samples. Additionally, she spearheaded the design and functionality 
+                of the user interface, making it intuitive and user-friendly. While her main focus was on these areas, Anmol also 
+                contributed to data augmentation and testing to ensure the project met its quality benchmarks.
+            </li>
+            <li>
+                <strong>Sai:</strong> 
+                Sai was instrumental in model training and score evaluation, taking on the main role in these areas. He worked on 
+                refining the model, tuning parameters, and evaluating its performance with NLP metrics to ensure accuracy. Sai 
+                also contributed to data collection, sourcing diverse examples for training and testing. While his 
+                main focus was on model development, he also assisted with UI development and API integration.
+            </li>
+            <li>
+                <strong>Bhavishya:</strong> 
+                Bhavishya played a key role in data augmentation and data collection, leading efforts to create synthetic examples that improved 
+                the dataset’s quality and diversity. She also contributed to data collection and preprocessing, ensuring the 
+                dataset was well-organized. In addition, Bhavishya worked on UI development, enhancing its aesthetics. 
+                While her main focus was on these areas, he actively participated in testing to ensure the system  performed reliably.
+            </li>
+            <li>
+                <strong>Puja:</strong> 
+                Puja focused on model research and score evaluation, leading efforts to refine the hybrid model. 
+                She explored innovative techniques and pre-trained models to meet the project’s goals. While her main focus was on these aspects, 
+                Puja also contributed to testing and idea research, ensuring the project’s overall success.
+            </li>
+            <li>
+                <strong>Everyone:</strong> 
+                Idea research and testing were collective efforts, with every member contributing ideas and participating in 
+                rigorous system testing to ensure reliability and alignment with project goals.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .container {
+        background: #f9f9f9;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        line-height: 1.6;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2 {
+        color: #0062e6;
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        margin-top: 30px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    .contributions ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .contributions ul li {
+        background: #e8f1ff;
+        border: 1px solid #d0e2ff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+    }
+
+    .contributions ul li strong {
+        color: #007bff;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}

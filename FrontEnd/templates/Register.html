@@ -1,0 +1,50 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Register</h1>
+    <form id="registerForm" method="POST">
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <small class="error" id="usernameError"></small>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <small class="error" id="passwordError"></small>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        let isValid = true; // Tracks overall validation status
+
+        // Get user input values
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Error message elements
+        const usernameError = document.getElementById("usernameError");
+        const passwordError = document.getElementById("passwordError");
+
+        // Clear previous error messages
+        usernameError.textContent = "";
+        passwordError.textContent = "";
+
+        // Username validation: Alphanumeric and at least 6 characters
+        if (!/^[a-zA-Z0-9]{6,}$/.test(username)) {
+            usernameError.textContent = "Username must be at least 6 characters long and alphanumeric.";
+            isValid = false;
+        }
+
+        // Password validation: At least 8 characters, including one uppercase, one lowercase, one digit, and one special character
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordRegex.test(password)) {
+            passwordError.textContent = "Password must be at least 8 characters long, include one uppercase, one lowercase, one digit, and one special character.";
+            isValid = false;
+        }
+
+        // If validation fails, prevent form submission
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+</script>
+{% endblock %}
